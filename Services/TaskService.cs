@@ -14,5 +14,29 @@ namespace get_shit_done_webapi.Services
         {
             _context = context;
         }
+
+        public bool CreateTask(TaskModel newTask)
+        {
+            _context.Add(newTask);
+            return _context.SaveChanges() != 0;
+        }
+
+        public bool UpdateTask(TaskModel TaskUpdate)
+        {
+            _context.Update<TaskModel>(TaskUpdate);
+            return _context.SaveChanges() != 0;
+        }
+
+        public IEnumerable<TaskModel> GetAllTasks()
+        {
+            return _context.TaskInfo;
+        }
+
+        public bool DeleteTask(TaskModel TaskDelete)
+        {
+            TaskDelete.isDeleted = true;
+            _context.Update<TaskModel>(TaskDelete);
+            return _context.SaveChanges() !=0;
+        }
     }
 }

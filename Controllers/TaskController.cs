@@ -25,11 +25,25 @@ namespace get_shit_done_webapi.Controllers
             return _data.CreateTask(newTask);
         }
 
-        [HttpPost("EditTask")]
-        public bool EditTask(TaskModel TaskUpdate)
+        [HttpPost("UpdateTask")]
+        public bool UpdateTask(TaskModel TaskUpdate)
         {
-            return _data.EditTask(TaskUpdate);
+            return _data.UpdateTask(TaskUpdate);
         }
+
+        [HttpGet("GetAllTasks")]
+        public IEnumerable<TaskModel> GetAllTasks()
+        {
+            return _data.GetAllTasks();
+        }
+
+        [HttpPost("DeleteTask")]
+        public bool DeleteTask(TaskModel TaskDelete)
+        {
+            return _data.DeleteTask(TaskDelete);
+        }
+
+        //maybe get a task by status
 
 
     }

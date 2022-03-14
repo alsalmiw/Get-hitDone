@@ -23,11 +23,19 @@ namespace get_shit_done_webapi.Services
 
         public bool EditProject(ProjectModel ProjectUpdate)
         {
-
+            _context.Update<ProjectModel>(ProjectUpdate);
+            return _context.SaveChanges() !=0;
         }
-        public bool ArchiveProject()
+        public bool ArchiveProject(ProjectModel ProjectArchive)
         {
-
+            _context.Update<ProjectModel>(ProjectArchive);
+            return _context.SaveChanges() !=0;
+        }
+        public bool DeleteProject(ProjectModel ProjectDelete)
+        {
+            ProjectDelete.isDeleted = true;
+            _context.Update<ProjectModel>(ProjectDelete);
+            return _context.SaveChanges() !=0;
         }
         
         public IEnumerable<ProjectModel> GetAllProjects()

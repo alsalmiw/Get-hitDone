@@ -35,18 +35,28 @@ namespace get_shit_done_webapi.Controllers
         {
             return _data.ArchiveProject(ProjectArchive);
         }
-        
+
+        [HttpPost("DeleteProject")]
+        public bool DeleteProject(ProjectModel ProjectDelete)
+        {
+            return _data.DeleteProject(ProjectDelete);
+        }
+    
         
         [HttpGet("GetAllProjects")]
         public IEnumerable<ProjectModel> GetAllProjects()
         {
             return _data.GetAllProjects();
         }
+
+        
         
         //Endpoints we need
         //User can create a project
         //User edit a project
         //User can archieve a project
+        //soft delete a project
         //Get all the projects
+
     }
 }

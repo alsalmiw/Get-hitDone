@@ -25,7 +25,11 @@ namespace get_shit_done_webapi.Controllers
             return _data.AddUser(UserToAdd);
         }
 
-        
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] LoginDTO User)
+        {
+            return _data.Login(User);
+        }
 
     }
 }

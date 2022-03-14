@@ -13,5 +13,11 @@ namespace get_shit_done_webapi.Services
         {
             _context = context;
         }
+
+        //Add a user
+        // public bool AddUser(CreateAccountDTO UserToAdd)
+        // {
+            
+        // }
     }
 }
