@@ -14,5 +14,10 @@ namespace get_shit_done_webapi.Services
         {
             _context = context;
         }
+
+        // public bool CreateProject(ProjectModel newProject)
+        // {
+            
+        // }
     }
 }

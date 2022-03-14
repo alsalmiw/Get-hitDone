@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using get_shit_done_webapi.Models;
 using get_shit_done_webapi.Services.Context; 
 
-namespace get_shit_done_webapi.Services.Context
+namespace get_shit_done_webapi.Services
 {
     public class TaskService
     {

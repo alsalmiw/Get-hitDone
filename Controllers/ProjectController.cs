@@ -17,5 +17,21 @@ namespace get_shit_done_webapi.Controllers
         {
             _data = _dataFromService;
         }
+
+        [HttpPost("CreateProject")]
+        public bool CreateProject(ProjectModel newProject)
+        {
+            return _data.CreateProject(newProject);
+        }
+        
+        
+        
+        
+        
+        //Endpoints we need
+        //User can create a project
+        //User edit a project
+        //User can archieve a project
+        //Get all the projects
     }
 }
