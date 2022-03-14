@@ -33,7 +33,6 @@ namespace get_shit_done_webapi.Services
             newHashedPassword.Salt = Salt;
             newHashedPassword.Hash = HashPassword;
             return newHashedPassword;
-
         }
 
 
