@@ -25,6 +25,7 @@ namespace get_shit_done_webapi.Services
         {
             _context.Update<ProjectModel>(ProjectUpdate);
             return _context.SaveChanges() !=0;
+
         }
         public bool ArchiveProject(ProjectModel ProjectArchive)
         {

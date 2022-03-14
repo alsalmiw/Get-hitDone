@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using get_shit_done_webapi.Models;
+using get_shit_done_webapi.Models.DTO;
 using get_shit_done_webapi.Services;
 using Microsoft.AspNetCore.Mvc;
 
