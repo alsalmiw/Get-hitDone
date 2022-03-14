@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BlogAppBackEnd.Models;
+using get_shit_done_webapi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BlogAppBackEnd.Services.Context
+namespace get_shit_done_webapi.Services.Context
 {
     public class DataContext : DbContext
     {
