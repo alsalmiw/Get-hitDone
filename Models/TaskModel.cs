@@ -15,7 +15,6 @@ namespace get_shit_done_webapi.Models
         public string? PriorityOfTask { get; set; }
         public string? StatusOfTask { get; set; }
         public string? TaskDueDate { get; set; }
-       
         public bool? TaskIsDeleted { get; set; }
         public bool? TaskisArchived { get; set; }
         public TaskModel(){}

@@ -1,5 +1,6 @@
 using get_shit_done_webapi.Services;
 using get_shit_done_webapi.Services.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +8,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped <ProjectService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<TaskService>();
+
+
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
