@@ -7,7 +7,7 @@ namespace get_shit_done_webapi.Models.DTO
 {
     public class PasswordDTO
     {
-         public string? Salt  { get; set; }
+        public string? Salt  { get; set; }
         public string? Hash { get; set; }
     }
 }

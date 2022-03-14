@@ -19,5 +19,13 @@ namespace get_shit_done_webapi.Controllers
             _data = _dataFromService;
         }
 
+        [HttpPost("AddUser")]
+        public bool AddUser(CreateAccountDTO UserToAdd)
+        {
+            return _data.AddUser(UserToAdd);
+        }
+
+        
+
     }
 }

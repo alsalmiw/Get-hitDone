@@ -7,7 +7,7 @@ using get_shit_done_webapi.Services.Context;
 
 namespace get_shit_done_webapi.Services
 {
-    public class ProjectService 
+    public class ProjectService
     {
         private readonly DataContext _context;
         public ProjectService(DataContext context)
@@ -17,18 +17,19 @@ namespace get_shit_done_webapi.Services
 
         public bool CreateProject(ProjectModel newProject)
         {
-            _context.Add(newBlogItem);
-          return _context.SaveChanges() != 0;
+            _context.Add(newProject);
+            return _context.SaveChanges() != 0;
         }
 
         public bool EditProject(ProjectModel ProjectUpdate)
         {
-            
+
         }
         public bool ArchiveProject()
         {
-            
+
         }
+        
         public IEnumerable<ProjectModel> GetAllProjects()
         {
             return _context.ProjectInfo;
