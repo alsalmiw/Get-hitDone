@@ -15,9 +15,25 @@ namespace get_shit_done_webapi.Services
             _context = context;
         }
 
-        // public bool CreateProject(ProjectModel newProject)
-        // {
+        public bool CreateProject(ProjectModel newProject)
+        {
+            _context.Add(newBlogItem);
+          return _context.SaveChanges() != 0;
+        }
+
+        public bool EditProject(ProjectModel ProjectUpdate)
+        {
             
-        // }
+        }
+        public bool ArchiveProject()
+        {
+            
+        }
+        public IEnumerable<ProjectModel> GetAllProjects()
+        {
+            return _context.ProjectInfo;
+        }
+
+
     }
 }

@@ -19,6 +19,18 @@ namespace get_shit_done_webapi.Controllers
             _data = _dataFromService;
         }
 
+        [HttpPost("CreateTask")]
+        public bool CreateTask(TaskModel newTask)
+        {
+            return _data.CreateTask(newTask);
+        }
+
+        [HttpPost("EditTask")]
+        public bool EditTask(TaskModel TaskUpdate)
+        {
+            return _data.EditTask(TaskUpdate);
+        }
+
 
     }
 }

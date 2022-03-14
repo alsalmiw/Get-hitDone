@@ -23,10 +23,25 @@ namespace get_shit_done_webapi.Controllers
         {
             return _data.CreateProject(newProject);
         }
+
+        [HttpPost("EditProject")]
+        public bool EditProject(ProjectModel ProjectUpdate)
+        {
+            return _data.EditProject(ProjectUpdate);
+        }
+
+        [HttpPost("ArchiveProject")]
+        public bool ArchiveProject(ProjectModel ProjectArchive)
+        {
+            return _data.ArchiveProject(ProjectArchive);
+        }
         
         
-        
-        
+        [HttpGet("GetAllProjects")]
+        public IEnumerable<ProjectModel> GetAllProjects()
+        {
+            return _data.GetAllProjects();
+        }
         
         //Endpoints we need
         //User can create a project
