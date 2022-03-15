@@ -38,5 +38,12 @@ namespace get_shit_done_webapi.Services
             _context.Update<TaskModel>(TaskDelete);
             return _context.SaveChanges() !=0;
         }
+
+        public bool TaskStatus(TaskModel TaskStatus)
+        {
+            _context.Update<TaskModel>(TaskStatus);
+            return _context.SaveChanges() != 0;
+        }
+    
     }
 }

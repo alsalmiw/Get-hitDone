@@ -2058,19 +2058,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\An Nguyen\\.nuget\\packages\\": {}
+    "C:\\Users\\Vang\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-3\\get_shit_done-webapi.csproj",
+      "projectUniqueName": "C:\\Users\\Vang\\OneDrive\\Desktop\\level3pro\\GetDone\\Get-hitDone\\get_shit_done-webapi.csproj",
       "projectName": "get_shit_done-webapi",
-      "projectPath": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-3\\get_shit_done-webapi.csproj",
-      "packagesPath": "C:\\Users\\An Nguyen\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-3\\obj\\",
+      "projectPath": "C:\\Users\\Vang\\OneDrive\\Desktop\\level3pro\\GetDone\\Get-hitDone\\get_shit_done-webapi.csproj",
+      "packagesPath": "C:\\Users\\Vang\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Vang\\OneDrive\\Desktop\\level3pro\\GetDone\\Get-hitDone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\An Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Vang\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
