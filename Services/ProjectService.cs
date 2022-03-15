@@ -21,7 +21,7 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool EditProject(ProjectModel ProjectUpdate)
+        public bool UpdateProject(ProjectModel ProjectUpdate)
         {
             _context.Update<ProjectModel>(ProjectUpdate);
             return _context.SaveChanges() !=0;
@@ -42,6 +42,14 @@ namespace get_shit_done_webapi.Services
         public IEnumerable<ProjectModel> GetAllProjects()
         {
             return _context.ProjectInfo;
+        }
+        public ProjectModel GetProjectById(int Id)
+        {
+            return _context.ProjectInfo.SingleOrDefault(item => item.Id == Id);
+        }
+        public IEnumerable<ProjectModel> GetItemsByUserID(int UserId)
+        {
+            return _context.ProjectInfo.Where(item => item.UserId == UserID);
         }
 
 
