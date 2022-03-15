@@ -49,7 +49,7 @@ namespace get_shit_done_webapi.Services
         }
         public IEnumerable<ProjectModel> GetItemsByUserID(int UserId)
         {
-            return _context.ProjectInfo.Where(item => item.UserId == UserID);
+            return _context.ProjectInfo.Where(item => item.UserId == UserId);
         }
 
 
