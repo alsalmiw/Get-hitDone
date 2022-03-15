@@ -58,7 +58,7 @@ namespace get_shit_done_webapi.Controllers
         [HttpGet("GetItemsByUserID/{userId}")]
         public IEnumerable<ProjectModel> GetItemsByUserID(int UserId)
         {
-            return _data.GetItemsByUserID(userId);
+            return _data.GetItemsByUserID(UserId);
         }
 
 
