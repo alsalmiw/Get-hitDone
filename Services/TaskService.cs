@@ -34,7 +34,7 @@ namespace get_shit_done_webapi.Services
 
         public bool DeleteTask(TaskModel TaskDelete)
         {
-            TaskDelete.isDeleted = true;
+            TaskDelete.TaskIsDeleted = true;
             _context.Update<TaskModel>(TaskDelete);
             return _context.SaveChanges() !=0;
         }
