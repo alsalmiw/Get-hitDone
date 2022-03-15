@@ -32,5 +32,18 @@ namespace get_shit_done_webapi.Controllers
             return _data.Login(User);
         }
 
+        [HttpPost("UpdateUser/{id}/{username}")]
+        public bool UpdateUser(int id, string username)
+        {
+            return _data.UpdateUser(id, username);
+        }
+
+        [HttpPost("DeleteUser/{userToDelete}")]
+
+        public bool DeleteUser(string userToDelete)
+        {
+            return _data.DeleteUser(userToDelete);
+        }
+
     }
 }
