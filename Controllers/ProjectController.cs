@@ -55,11 +55,13 @@ namespace get_shit_done_webapi.Controllers
             return _data.GetProjectById(Id);
         }
 
-        [HttpGet("GetItemsByUserID/{userId}")]
-        public IEnumerable<ProjectModel> GetItemsByUserID(int UserId)
+        [HttpGet("GetProjectByUserID/{userId}")]
+        public IEnumerable<ProjectModel> GetProjectByUserID(int UserId)
         {
-            return _data.GetItemsByUserID(UserId);
+            return _data.GetProjectByUserID(UserId);
         }
+
+
 
 
         

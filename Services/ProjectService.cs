@@ -47,7 +47,7 @@ namespace get_shit_done_webapi.Services
         {
             return _context.ProjectInfo.SingleOrDefault(item => item.Id == Id);
         }
-        public IEnumerable<ProjectModel> GetItemsByUserID(int UserId)
+        public IEnumerable<ProjectModel> GetProjectByUserID(int UserId)
         {
             return _context.ProjectInfo.Where(item => item.UserId == UserId);
         }
