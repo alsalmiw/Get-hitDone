@@ -21,6 +21,7 @@ namespace get_shit_done_webapi.Services
             return _context.UserInfo.SingleOrDefault(user => user.Username == username) != null;
         }
 
+
          public PasswordDTO HashPassword(string? password)
         {
             PasswordDTO newHashedPassword = new PasswordDTO();

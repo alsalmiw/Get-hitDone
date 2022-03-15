@@ -21,7 +21,7 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() != 0;
         }
 
-        public bool EditProject(ProjectModel ProjectUpdate)
+        public bool UpdateProject(ProjectModel ProjectUpdate)
         {
             _context.Update<ProjectModel>(ProjectUpdate);
             return _context.SaveChanges() !=0;

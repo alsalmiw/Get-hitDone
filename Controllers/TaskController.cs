@@ -45,6 +45,11 @@ namespace get_shit_done_webapi.Controllers
 
         //maybe get a task by status
 
-
+        [HttpPost("TaskStatus")]
+        public bool TaskStatus(TaskModel TaskStatus)
+        {
+            return _data.TaskStatus(TaskStatus);
+        }
+        
     }
 }

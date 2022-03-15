@@ -24,10 +24,10 @@ namespace get_shit_done_webapi.Controllers
             return _data.CreateProject(newProject);
         }
 
-        [HttpPost("EditProject")]
-        public bool EditProject(ProjectModel ProjectUpdate)
+        [HttpPost("UpdateProject")]
+        public bool UpdateProject(ProjectModel ProjectUpdate)
         {
-            return _data.EditProject(ProjectUpdate);
+            return _data.UpdateProject(ProjectUpdate);
         }
 
         [HttpPost("ArchiveProject")]
