@@ -44,6 +44,10 @@ namespace get_shit_done_webapi.Services
             _context.Update<TaskModel>(TaskStatus);
             return _context.SaveChanges() != 0;
         }
+        public TaskModel GetTaskById(int Id)
+        {
+            return _context.TaskModel.SingleOrDefault(item => item.Id == Id);
+        }
     
     }
 }
