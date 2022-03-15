@@ -33,7 +33,7 @@ namespace get_shit_done_webapi.Services
             return _context.UserInfo.SingleOrDefault(user => user.Username == username);
         }
 
-        public bool UpdateUsername(int id, string username)
+        public bool UpdateUser(int id, string username)
         {
             UserModel foundUser = GetUserByID(id);
             bool result = false;
@@ -71,7 +71,7 @@ namespace get_shit_done_webapi.Services
             {
                 var foundUser = GetUserByUsername(user.Username);
                 var verifyPass = VerifyUserPassword(user.Password, foundUser.Hash, foundUser.Salt);
-                if(verifypass)
+                if(verifyPass)
                 {
                     var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TaskTracker@209"));
                     var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
@@ -86,6 +86,7 @@ namespace get_shit_done_webapi.Services
                     Result = Ok(new { Token = tokenString });
                 }
             }
+            return Result;
 
         }
 

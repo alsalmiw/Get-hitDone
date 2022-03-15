@@ -1,0 +1,7 @@
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.csproj.AssemblyReference.cache
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.AssemblyInfoInputs.cache
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.AssemblyInfo.cs
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.csproj.CoreCompileInputs.cache
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-3\obj\Debug\net6.0\get_shit_done-webapi.MvcApplicationPartsAssemblyInfo.cache

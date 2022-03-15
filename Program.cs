@@ -1,6 +1,6 @@
 using get_shit_done_webapi.Services;
 using get_shit_done_webapi.Services.Context;
-using Microsoft.EntityFrameworkContext;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
