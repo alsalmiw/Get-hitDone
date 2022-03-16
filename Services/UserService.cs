@@ -130,17 +130,21 @@ namespace get_shit_done_webapi.Services
 
          public bool AddUser(CreateAccountDTO UserToAdd)
         {
-             bool result = false;
+            bool result = false;
             if (!DoesUserExists(UserToAdd.Username))
             {
                 UserModel newUser = new UserModel();
-				newUser.Id = UserToAdd.Id; 
+				newUser.Id = 0; 
                 newUser.Username = UserToAdd.Username;
                 
                 var hashedPassword = HashPassword(UserToAdd.Password);
              
                 newUser.Salt = hashedPassword.Salt;
                 newUser.Hash = hashedPassword.Hash;
+                newUser.isAdmin = false;
+                newUser.isOwner = false;
+                newUser.isRevoked = false;
+                newUser.isDeleted = false;
 							
                 _context.Add(newUser);
 
