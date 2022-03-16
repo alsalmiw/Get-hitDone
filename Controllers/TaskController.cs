@@ -52,10 +52,10 @@ namespace get_shit_done_webapi.Controllers
         {
             return _data.TaskStatus(TaskStatus);
         }
-        [HttpGet("GetTaskById/{Id}")]
-        public TaskModel GetTaskById(int Id)
+        [HttpGet("GetTaskByProjectId/{Id}")]
+        public TaskModel GetTaskByProjectId(int Id)
         {
-            return _data.GetTaskById(Id);
+            return _data.GetTaskByProjectId(Id);
         }
 
         
