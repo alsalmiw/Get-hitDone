@@ -32,6 +32,12 @@ namespace get_shit_done_webapi.Controllers
             return _data.Login(User);
         }
 
+        [HttpPost("UpdateUserModel")]
+        public bool UpdateUserModel(UserModel UserToUpdate)
+        {
+            return UpdateUserModel(UserToUpdate);
+        }
+
         [HttpPost("UpdateUser/{id}/{username}")]
         public bool UpdateUser(int id, string username)
         {
