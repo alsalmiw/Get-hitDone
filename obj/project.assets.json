@@ -2058,19 +2058,34 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Vang\\.nuget\\packages\\": {}
+<<<<<<< HEAD
+    "C:\\Users\\An Nguyen\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Danny\\.nuget\\packages\\": {}
+>>>>>>> dae5975909c37f3f9d995b86d4a7a4a600082d26
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vang\\OneDrive\\Desktop\\level3pro\\GetDone\\Get-hitDone\\get_shit_done-webapi.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj",
       "projectName": "get_shit_done-webapi",
-      "projectPath": "C:\\Users\\Vang\\OneDrive\\Desktop\\level3pro\\GetDone\\Get-hitDone\\get_shit_done-webapi.csproj",
-      "packagesPath": "C:\\Users\\Vang\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vang\\OneDrive\\Desktop\\level3pro\\GetDone\\Get-hitDone\\obj\\",
+      "projectPath": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj",
+      "packagesPath": "C:\\Users\\An Nguyen\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Vang\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\An Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\get_shit_done-webapi.csproj",
+      "projectName": "get_shit_done-webapi",
+      "projectPath": "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\get_shit_done-webapi.csproj",
+      "packagesPath": "C:\\Users\\Danny\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Danny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> dae5975909c37f3f9d995b86d4a7a4a600082d26
       ],
       "originalTargetFrameworks": [
         "net6.0"

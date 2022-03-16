@@ -46,6 +46,12 @@ namespace get_shit_done_webapi.Services
             return result;
         }
 
+        public bool UpdateUserModel(UserModel UserToUpdate)
+        {
+            _context.Update<UserModel>(UserToUpdate);
+            return _context.SaveChanges() !=0;
+        }
+
         public bool DeleteUser(string Username)
         {
             UserModel foundUser = GetUserByUsername(Username);
@@ -83,7 +89,7 @@ namespace get_shit_done_webapi.Services
                 var isRevoked = revokedStatus(user.Username);
                 if(verifyPass)
                 {
-                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TaskTracker@209"));
+                    var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ILoveToTaskTrackerAllDay@209"));
                     var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
                     var tokeOptions = new JwtSecurityToken(
                         issuer: "http://localhost:5000",
@@ -119,7 +125,7 @@ namespace get_shit_done_webapi.Services
             return newHashedPassword;
         }
 
-        public bool VerifyUserPassword(string Password, string StoredHash, string StoredSalt)
+        public bool VerifyUserPassword(string? Password, string? StoredHash, string? StoredSalt)
         {
             var SaltBytes = Convert.FromBase64String(StoredSalt);
             var rfc2898DeriveBytes = new Rfc2898DeriveBytes(Password, SaltBytes, 10000);
