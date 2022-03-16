@@ -191,3 +191,8 @@ C:\Users\Danny\Documents\Codestack\Level2\team0\Get-hitDone\obj\Debug\net6.0\ref
 C:\Users\Danny\Documents\Codestack\Level2\team0\Get-hitDone\obj\Debug\net6.0\get_shit_done-webapi.pdb
 C:\Users\Danny\Documents\Codestack\Level2\team0\Get-hitDone\obj\Debug\net6.0\get_shit_done-webapi.genruntimeconfig.cache
 >>>>>>> dae5975909c37f3f9d995b86d4a7a4a600082d26
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-4\bin\Debug\net6.0\publish\web.config
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-4\bin\Debug\net6.0\publish\appsettings.Development.json
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-4\bin\Debug\net6.0\publish\appsettings.json
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-4\bin\Debug\net6.0\publish\get_shit_done-webapi.deps.json
+C:\Users\An Nguyen\Desktop\CodeStack\LEVEL2\GetShitDoneBackEnd\Get-hitDone-4\bin\Debug\net6.0\publish\get_shit_done-webapi.runtimeconfig.json
