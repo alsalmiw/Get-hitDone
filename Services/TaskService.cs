@@ -46,7 +46,7 @@ namespace get_shit_done_webapi.Services
         }
         public TaskModel GetTaskById(int Id)
         {
-            return _context.TaskModel.SingleOrDefault(item => item.Id == Id);
+            return _context.TaskInfo.SingleOrDefault(item => item.Id == Id);
         }
     
     }
