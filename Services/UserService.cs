@@ -33,13 +33,13 @@ namespace get_shit_done_webapi.Services
             return _context.UserInfo.SingleOrDefault(user => user.Username == username);
         }
 
-        public bool UpdateUser(int id, string username)
+        public bool UpdateUser(int id, string newUsername)
         {
             UserModel foundUser = GetUserByID(id);
             bool result = false;
             if(foundUser != null)
             {
-                foundUser.Username = username;
+                foundUser.Username = newUsername;
                 _context.Update<UserModel>(foundUser);
                 result = _context.SaveChanges() != 0;
             }

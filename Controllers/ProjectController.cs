@@ -61,6 +61,13 @@ namespace get_shit_done_webapi.Controllers
             return _data.GetProjectByUserID(UserId);
         }
 
+        [HttpPost("DeleteProject/{projectId}")]
+
+        public bool DeleteProject(int projectId)
+        {
+            return _data.DeleteProject(projectId);
+        }
+
 
 
 

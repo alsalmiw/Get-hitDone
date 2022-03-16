@@ -39,14 +39,13 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() !=0;
         }
 
-        public bool TaskStatus(TaskModel TaskStatus)
+        public IEnumerable<TaskModel> GetTaskByStatus (string TaskStatus)
         {
-            _context.Update<TaskModel>(TaskStatus);
-            return _context.SaveChanges() != 0;
+            return _context.TaskInfo.Where(item => item.StatusOfTask == TaskStatus);
         }
-        public TaskModel GetTaskByProjectId(int Id)
+        public IEnumerable<TaskModel> GetTaskByProjectId(int Id)
         {
-            return _context.TaskInfo.SingleOrDefault(item => item.Id == Id);
+            return _context.TaskInfo.Where(item => item.ProjectId == Id);
         }
     
     }

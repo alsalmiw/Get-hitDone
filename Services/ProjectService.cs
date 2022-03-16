@@ -29,9 +29,11 @@ namespace get_shit_done_webapi.Services
         }
         public bool ArchiveProject(ProjectModel ProjectArchive)
         {
+            ProjectArchive.isArchived = true;
             _context.Update<ProjectModel>(ProjectArchive);
             return _context.SaveChanges() !=0;
         }
+
         public bool DeleteProject(ProjectModel ProjectDelete)
         {
             ProjectDelete.isDeleted = true;
@@ -50,6 +52,19 @@ namespace get_shit_done_webapi.Services
         public IEnumerable<ProjectModel> GetProjectByUserID(int UserId)
         {
             return _context.ProjectInfo.Where(item => item.UserId == UserId);
+        }
+
+        public bool DeleteProject(int projectId)
+        {
+            ProjectModel foundProject = GetProjectById(projectId);
+            bool result = false;
+            if(foundProject != null)
+            {
+                foundProject.Id = projectId;
+                _context.Remove<ProjectModel>(foundProject);
+               result =  _context.SaveChanges() != 0;
+            }
+            return result;
         }
 
 

@@ -33,7 +33,7 @@ namespace get_shit_done_webapi.Controllers
 
         //
         [HttpGet("GetAllTasksWithProjectId/{Id}")]
-        public IEnumerable<TaskModel> GetAllTasks()
+        public IEnumerable<TaskModel> GetAllTasks(int Id)
         {
             return _data.GetAllTasks();
         }
@@ -47,15 +47,10 @@ namespace get_shit_done_webapi.Controllers
 
         //maybe get a task by status
 
-        [HttpGet("TaskStatus")]
-        public bool TaskStatus(TaskModel TaskStatus)
+        [HttpGet("TaskStatus/{TaskStatus}")]
+        public IEnumerable<TaskModel> GetTaskByStatus(string TaskStatus)
         {
-            return _data.TaskStatus(TaskStatus);
-        }
-        [HttpGet("GetTaskByProjectId/{Id}")]
-        public TaskModel GetTaskByProjectId(int Id)
-        {
-            return _data.GetTaskByProjectId(Id);
+            return _data.GetTaskByStatus(TaskStatus);
         }
 
         
