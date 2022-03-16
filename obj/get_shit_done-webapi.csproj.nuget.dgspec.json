@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\An Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\get_shit_done-webapi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\get_shit_done-webapi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\get_shit_done-webapi.csproj",
+        "projectName": "get_shit_done-webapi",
+        "projectPath": "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\get_shit_done-webapi.csproj",
+        "packagesPath": "C:\\Users\\Danny\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Danny\\Documents\\Codestack\\Level2\\team0\\Get-hitDone\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Danny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> dae5975909c37f3f9d995b86d4a7a4a600082d26
         ],
         "originalTargetFrameworks": [
           "net6.0"
