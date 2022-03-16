@@ -63,7 +63,16 @@ namespace get_shit_done_webapi.Services
         {
             return _context.UserInfo.SingleOrDefault(user => user.Username == username) != null;
         }
-
+        public bool revokedStatus(string? username)
+        {
+            bool result = false;
+            UserModel foundUser = GetUserByUsername(username);
+            if(foundUser.isRevoked == true)
+            {
+                result = true;
+            }
+            return result; 
+        }
         public IActionResult Login(LoginDTO user)
         {
             IActionResult Result = Unauthorized();
@@ -71,6 +80,7 @@ namespace get_shit_done_webapi.Services
             {
                 var foundUser = GetUserByUsername(user.Username);
                 var verifyPass = VerifyUserPassword(user.Password, foundUser.Hash, foundUser.Salt);
+                var isRevoked = revokedStatus(user.Username);
                 if(verifyPass)
                 {
                     var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("TaskTracker@209"));
@@ -81,9 +91,12 @@ namespace get_shit_done_webapi.Services
                         claims: new List<Claim>(),
                         expires: DateTime.Now.AddMinutes(30),
                         signingCredentials: signinCredentials
-                    );
-                    var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
-                    Result = Ok(new { Token = tokenString });
+                    );              
+                    if(isRevoked == false)
+                    {
+                        var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+                        Result = Ok(new { Token = tokenString });
+                    }
                 }
             }
             return Result;
