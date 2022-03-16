@@ -44,6 +44,7 @@ namespace get_shit_done_webapi.Controllers
         {
             return _data.DeleteUser(userToDelete);
         }
+        
 
     }
 }
