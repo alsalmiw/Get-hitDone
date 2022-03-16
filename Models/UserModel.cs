@@ -13,6 +13,10 @@ namespace get_shit_done_webapi.Models
         public string? Hash {get; set;}
         public string? Role { get; set; }
         public bool isAdmin { get; set; }
+        public bool isOwner { get; set; }
+        public bool isRevoked { get; set; }
+        public bool isDeleted { get; set; }
+
         public UserModel(){}
     }
 }
