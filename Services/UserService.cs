@@ -46,6 +46,12 @@ namespace get_shit_done_webapi.Services
             return result;
         }
 
+        public bool UpdateUserModel(UserModel UserToUpdate)
+        {
+            _context.Update<UserModel>(UserToUpdate);
+            return _context.SaveChanges() !=0;
+        }
+
         public bool DeleteUser(string Username)
         {
             UserModel foundUser = GetUserByUsername(Username);
