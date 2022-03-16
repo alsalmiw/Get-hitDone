@@ -13,9 +13,7 @@ namespace get_shit_done_webapi.Services.Context
         public DbSet<TaskModel> TaskInfo { get; set; }
         public DbSet<UserModel> UserInfo { get; set; }
         public DataContext(DbContextOptions options) : base(options)
-        {
-
-        }
+        { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
