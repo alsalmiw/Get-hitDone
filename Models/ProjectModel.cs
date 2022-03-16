@@ -14,7 +14,7 @@ namespace get_shit_done_webapi.Models
         public string? DateCreate { get; set; }
         public string? DueDate { get; set; }
         public string? StatusOfProject { get; set; }
-        public string? PriorityOfProject { get; set; }
+        public int PriorityOfProject { get; set; }
         public bool isDeleted { get; set; }
         public bool isArchived { get; set; }
         public ProjectModel(){ }
