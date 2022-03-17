@@ -67,6 +67,5 @@ namespace get_shit_done_webapi.Services
             return result;
         }
 
-
     }
 }

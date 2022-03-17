@@ -24,8 +24,11 @@ namespace get_shit_done_webapi.Controllers
         {
             return _data.GetAllUsers();
         }
-        // [HttpGet("GetUserByUsername/{username}")]
-        // public
+        [HttpGet("GetUserByUsername/{username}")]
+        public UserModel GetUserByUsername(string username)
+        {
+            return _data.GetUserByUsername(username);
+        }
 
         [HttpPost("AddUser")]
         public bool AddUser(CreateAccountDTO UserToAdd)
@@ -61,8 +64,6 @@ namespace get_shit_done_webapi.Controllers
         {
             return _data.RevokeUserAccess(GivingAdmin);
         }
-
-
 
         [HttpPost("DeleteUser/{userToDelete}")]
 

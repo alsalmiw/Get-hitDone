@@ -42,6 +42,7 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() !=0;
         }
 
+
         public UserModel GetUserByID(int Id)
         {
             return _context.UserInfo.SingleOrDefault(user => user.Id == Id);
