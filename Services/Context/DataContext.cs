@@ -12,6 +12,7 @@ namespace get_shit_done_webapi.Services.Context
         public DbSet<ProjectModel> ProjectInfo { get; set; }
         public DbSet<TaskModel> TaskInfo { get; set; }
         public DbSet<UserModel> UserInfo { get; set; }
+        public DbSet<SpecialistProjectModel> SpecialistProjectInfo { get; set; }
         public DataContext(DbContextOptions options) : base(options)
         { }
 

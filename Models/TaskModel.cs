@@ -12,7 +12,7 @@ namespace get_shit_done_webapi.Models
         public string? TaskName { get; set; }
         public string? TaskDateCreate { get; set; }
         public string? TaskDescription { get; set; }
-        public int PriorityOfTask { get; set; }
+        public string? PriorityOfTask { get; set; }
         public string? StatusOfTask { get; set; }
         public string? TaskDueDate { get; set; }
         public bool? TaskIsDeleted { get; set; }
