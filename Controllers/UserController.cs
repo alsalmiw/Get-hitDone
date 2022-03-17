@@ -72,13 +72,12 @@ namespace get_shit_done_webapi.Controllers
         
         }
 
-        [HttpPost("GiveUserOwnerStatus")]
-        public bool GiveUserOwnerStatus()
+        [HttpPost("GiveUserOwnerStatusByUserId/{UserId}")]
+        public bool GiveUserOwnerStatus(int id)
         {
-            return _data.GiveUserOwnerStatus();
+            return _data.GiveUserOwnerStatus(id);
         }
-        [HttpPost("RemoveUserAdminAccess")]
-        public 
+
 
         
 
