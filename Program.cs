@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped <ProjectService>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<TaskService>();
-
+builder.Services.AddScoped<SpecialistProjectService>();
 
 
 

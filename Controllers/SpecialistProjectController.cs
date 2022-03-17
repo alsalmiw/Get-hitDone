@@ -26,10 +26,10 @@ namespace get_shit_done_webapi.Controllers
             return _data.AddProjectSpecialist(ProjectToAdd);
         }
         
-        // [HttpGet("GetAllProjectsFromSpecialistId/{id}")]
-        // public IEnumerable<ProjectModel> GetAllProjectsFromSpeciaListId(int id)
-        // {
-        //     return _data.GetAllProjectsFromSpeciaListId(id);
-        // }
+        [HttpGet("GetAllProjectsFromSpecialistId/{id}")]
+        public List<int> GetAllProjectsFromSpeciaListId(int UserId)
+        {
+            return _data.GetAllProjectsFromSpeciaListId(UserId);
+        }
     }
 }
