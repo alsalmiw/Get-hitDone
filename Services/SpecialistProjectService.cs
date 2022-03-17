@@ -21,7 +21,7 @@ namespace get_shit_done_webapi.Services
         }
         
 
-        public List<int> GetAllProjectsFromSpeciaListId(int UserId)
+        public IEnumerable<ProjectModel> GetAllProjectsFromSpeciaListId(int UserId)
         {
             IEnumerable<ProjectModel> allProjects = _context.ProjectInfo;
             var projects = allProjects.ToList();
@@ -38,8 +38,16 @@ namespace get_shit_done_webapi.Services
                     }
                 }
             }
-            return matchingId;
+            // List<IEnumerable> projectsOfSpecialist = new List<IEnumerable>;
+            IEnumerable<ProjectModel> projectsOfSpecialist = Enumerable.Empty<ProjectModel>();
+            for(int x=0; x<matchingId.Count; x++)
+            {
+                projectsOfSpecialist.Append(_context.ProjectInfo.Where(item => item.Id == matchingId[x]));
+            }
+            return projectsOfSpecialist;
         }
+        // _context.ProjectInfo.Where(item => item.Id == matchingId);
+        // return _context.ProjectInfo.SingleOrDefault(item => item.Id == Id)
             //get list of all projects
 
 

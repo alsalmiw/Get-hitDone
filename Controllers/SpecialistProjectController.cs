@@ -26,8 +26,8 @@ namespace get_shit_done_webapi.Controllers
             return _data.AddProjectSpecialist(ProjectToAdd);
         }
         
-        [HttpGet("GetAllProjectsFromSpecialistId/{id}")]
-        public List<int> GetAllProjectsFromSpeciaListId(int UserId)
+        [HttpGet("GetAllProjectsFromSpecialistId/{UserId}")]
+        public IEnumerable<ProjectModel> GetAllProjectsFromSpeciaListId(int UserId)
         {
             return _data.GetAllProjectsFromSpeciaListId(UserId);
         }
