@@ -48,6 +48,14 @@ namespace get_shit_done_webapi.Controllers
             return _data.UpdateUserModel(UserToUpdate);
         }
 
+        //update the user role from admin to specialist
+        //specialist to admin
+        [HttpPost("UpdateUserRole/{Username}")]
+        public bool UpdateUserRole(string Username)
+        {
+            return _data.UpdateUserRole(Username);
+        }
+
         [HttpPost("UpdateUser/{id}/{newUsername}")]
         public bool UpdateUser(int id, string newUsername)
         {
