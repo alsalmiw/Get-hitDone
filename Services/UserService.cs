@@ -23,6 +23,25 @@ namespace get_shit_done_webapi.Services
             _context = context;
         }
 
+        public IEnumerable<UserModel> GetAllUsers()
+        {
+            return _context.UserInfo;
+        }
+
+        public bool RevokeUserAccess(UserModel RevokingUser)
+        {
+            RevokingUser.isRevoked = true;
+            _context.Update<UserModel>(RevokingUser);
+            return _context.SaveChanges() !=0;
+        }
+
+        public bool GiveUserAdminAccess(UserModel GivingAdmin)
+        {
+            GivingAdmin.isAdmin = true;
+            _context.Update<UserModel>(GivingAdmin);
+            return _context.SaveChanges() !=0;
+        }
+
         public UserModel GetUserByID(int Id)
         {
             return _context.UserInfo.SingleOrDefault(user => user.Id == Id);
