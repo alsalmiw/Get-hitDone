@@ -20,12 +20,6 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() != 0;
         }
         
-        // public IEnumerable<ProjectModel> GetAllProjectsFromSpeciaListId(int id)
-        // {
-        //     return 
-        // }
-        
-
 
         public List<int> GetAllProjectsFromSpeciaListId(int UserId)
         {
