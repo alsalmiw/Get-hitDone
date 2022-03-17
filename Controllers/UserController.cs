@@ -54,15 +54,15 @@ namespace get_shit_done_webapi.Controllers
             return _data.UpdateUser(id, newUsername);
         }
 
-        [HttpPost("RevokeUserAccess")]
-        public bool RevokeUserAccess(UserModel RevokingUser)
+        [HttpPost("ChangeRevokeUserAccess/{id}")]
+        public bool ChangeRevokeUserAccess(int id)
         {
-            return _data.RevokeUserAccess(RevokingUser);
+            return _data.ChangeRevokeUserAccess(id);
         }
-        [HttpPost("GiveUserAdminAccess")]
-        public bool GiveUserAdminAccess(UserModel GivingAdmin)
+        [HttpPost("ChangeGiveUserAdminAccess/{id}")]
+        public bool ChangeGiveUserAdminAccess(int id)
         {
-            return _data.RevokeUserAccess(GivingAdmin);
+            return _data.ChangeGiveUserAdminAccess(id);
         }
 
         [HttpPost("DeleteUser/{userToDelete}")]
@@ -73,10 +73,10 @@ namespace get_shit_done_webapi.Controllers
         
         }
 
-        [HttpPost("GiveUserOwnerStatusByUserId/{UserId}")]
-        public bool GiveUserOwnerStatus(int id)
+        [HttpPost("ChangeUserOwnerStatusByUserId/{id}")]
+        public bool ChangeUserOwnerStatus(int id)
         {
-            return _data.GiveUserOwnerStatus(id);
+            return _data.ChangeUserOwnerStatus(id);
         }
 
 

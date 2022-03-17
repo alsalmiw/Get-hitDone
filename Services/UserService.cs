@@ -28,18 +28,30 @@ namespace get_shit_done_webapi.Services
             return _context.UserInfo;
         }
 
-        public bool RevokeUserAccess(UserModel RevokingUser)
+        public bool ChangeRevokeUserAccess(int id)
         {
-            RevokingUser.isRevoked = true;
-            _context.Update<UserModel>(RevokingUser);
-            return _context.SaveChanges() !=0;
+            bool result = false;
+            UserModel FoundUser = GetUserByID(id);
+            if(FoundUser != null)
+            {
+                FoundUser.isRevoked = !FoundUser.isRevoked;
+                _context.Update<UserModel>(FoundUser);
+                result = _context.SaveChanges() != 0;
+            }
+            return result;
         }
 
-        public bool GiveUserAdminAccess(UserModel GivingAdmin)
+        public bool ChangeGiveUserAdminAccess(int id)
         {
-            GivingAdmin.isAdmin = true;
-            _context.Update<UserModel>(GivingAdmin);
-            return _context.SaveChanges() !=0;
+            bool result = false;
+            UserModel FoundUser = GetUserByID(id);
+            if(FoundUser != null)
+            {
+                FoundUser.isAdmin = !FoundUser.isAdmin;
+                _context.Update<UserModel>(FoundUser);
+                result = _context.SaveChanges() != 0;
+            }
+            return result;
         }
 
 
@@ -175,6 +187,18 @@ namespace get_shit_done_webapi.Services
                 _context.Add(newUser);
 
                 result = _context.SaveChanges() != 0;   
+            }
+            return result;
+        }
+        public bool ChangeUserOwnerStatus(int id)
+        {
+            bool result = false;
+            UserModel FoundUser = GetUserByID(id);
+            if(FoundUser != null)
+            {
+                FoundUser.isOwner = !FoundUser.isOwner;
+                _context.Update<UserModel>(FoundUser);
+                result = _context.SaveChanges() != 0;
             }
             return result;
         }
