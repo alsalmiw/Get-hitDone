@@ -70,7 +70,17 @@ namespace get_shit_done_webapi.Controllers
         public bool DeleteUser(string userToDelete)
         {
             return _data.DeleteUser(userToDelete);
+        
         }
+
+        [HttpPost("GiveUserOwnerStatus")]
+        public bool GiveUserOwnerStatus()
+        {
+            return _data.GiveUserOwnerStatus();
+        }
+        [HttpPost("RemoveUserAdminAccess")]
+        public 
+
         
 
     }
