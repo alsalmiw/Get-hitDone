@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using get_shit_done_webapi.Models;
 using get_shit_done_webapi.Services.Context;
 
+
 namespace get_shit_done_webapi.Services
 {
     public class SpecialistProjectService
@@ -21,47 +22,44 @@ namespace get_shit_done_webapi.Services
         }
         
 
-        public IEnumerable<ProjectModel> GetAllProjectsFromSpeciaListId(int UserId)
+        public List<ProjectModel> GetAllProjectsFromSpeciaListId(int UserId)
         {
             IEnumerable<ProjectModel> allProjects = _context.ProjectInfo;
             var projects = allProjects.ToList();
-            IEnumerable<SpecialistProjectModel> specialistProjects = _context.SpecialistProjectInfo.Where(user => user.UserId == UserId);
+            IEnumerable<SpecialistProjectModel> specialistProjects = _context.SpecialistProjectInfo;
             var specialistProjectsVar =specialistProjects.ToList();
-            List<int> matchingId = new List<int>();
-            for(int i = 0; i< projects.Count; i++)
+            List<ProjectModel> allProjectToReturn = new List<ProjectModel>();
+            int projectIDValue = 0;
+            for(int i = 0; i<specialistProjectsVar.Count; i++)
             {
-                for(int j = 0; j < specialistProjectsVar.Count; j++)
+                if(specialistProjectsVar[i].UserId == UserId)
                 {
-                    if(projects[i].Id == specialistProjectsVar[j].ProjectId)
-                    {
-                        matchingId.Add(projects[i].Id);
-                    }
+                projectIDValue = specialistProjectsVar[i].ProjectId;
+                allProjectToReturn.Add(projects[projectIDValue]); 
+
                 }
             }
+            return allProjectToReturn;
+
+
+            // for(int i = 0; i< projects.Count; i++)
+            // {
+            //     for(int j = 0; j < specialistProjectsVar.Count; j++)
+            //     {
+            //         if(projects[i].Id == specialistProjectsVar[j].ProjectId)
+            //         {
+            //             matchingId.Add(projects[i].Id);
+            //         }
+            //     }
+            // }
             // List<IEnumerable> projectsOfSpecialist = new List<IEnumerable>;
-            IEnumerable<ProjectModel> projectsOfSpecialist = Enumerable.Empty<ProjectModel>();
-            for(int x=0; x<matchingId.Count; x++)
-            {
-                projectsOfSpecialist.Append(_context.ProjectInfo.Where(item => item.Id == matchingId[x]));
-            }
-            return projectsOfSpecialist;
+           // IEnumerable<ProjectModel> projectsOfSpecialist = (IEnumerable<ProjectModel>)allProjectToReturn;// as IEnumerable<ProjectModel>;
+            // List<ProjectModel> projectsOfSpecialist = new List<ProjectModel>();
+            // for(int x=0; x<matchingId.Count; x++)
+            // {
+            //     projectsOfSpecialist = _context.ProjectInfo.Where(item => item.Id == matchingId[x]);
+            // }
         }
-        // _context.ProjectInfo.Where(item => item.Id == matchingId);
-        // return _context.ProjectInfo.SingleOrDefault(item => item.Id == Id)
-            //get list of all projects
 
-
-        // specialist model
-        // Specialist(user) ID
-        //  Project ID (list) all projects assign to specialist 
-
-
-        //list of project = prolist
-        // list of project assign to user = 
-        
-        // public IEnumerable<TaskModel> GetAllTasks()
-        // {
-        //     return _context.TaskInfo;
-        // }
     }
 }
