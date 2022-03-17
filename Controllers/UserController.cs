@@ -50,10 +50,10 @@ namespace get_shit_done_webapi.Controllers
 
         //update the user role from admin to specialist
         //specialist to admin
-        [HttpPost("UpdateUserRole/{id}")]
-        public bool UpdateUserRole(int id)
+        [HttpPost("UpdateUserRole/{Username}")]
+        public bool UpdateUserRole(string Username)
         {
-            return _data.UpdateUserRole(id);
+            return _data.UpdateUserRole(Username);
         }
 
         [HttpPost("UpdateUser/{id}/{newUsername}")]
