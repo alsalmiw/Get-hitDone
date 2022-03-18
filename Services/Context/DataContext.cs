@@ -276,7 +276,7 @@ namespace get_shit_done_webapi.Services.Context
                 new TaskModel(){
                     Id = 1,
                     specialistId = 2,
-                    ProjectId = 1,
+                    ProjectId = 3,
                     TaskName ="ChickFlicksFrontEnd",
                     TaskDateCreate="Build Front End for ChicksFlicks",
                     TaskDescription = "Create the front end for app",
@@ -288,9 +288,9 @@ namespace get_shit_done_webapi.Services.Context
                     specialistName = "An"
                 },
                 new TaskModel(){
-                    Id = 1,
+                    Id = 2,
                     specialistId = 2,
-                    ProjectId = 4,
+                    ProjectId = 3,
                     TaskName ="ChickFlicksBackEnd",
                     TaskDateCreate="Build Back End for ChicksFlicks",
                     TaskDescription = "Create the back end for app",
@@ -302,7 +302,7 @@ namespace get_shit_done_webapi.Services.Context
                     specialistName = "Hector"
                 },
                 new TaskModel(){
-                    Id = 1,
+                    Id = 3,
                     specialistId = 2,
                     ProjectId = 1,
                     TaskName ="ChickFlicksFrontEnd",
