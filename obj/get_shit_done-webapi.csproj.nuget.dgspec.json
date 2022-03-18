@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/walaa/Documents/CodeStack/Visual Studio Code/FullStack/GetShitDone/get_shit_done-webapi/get_shit_done-webapi.csproj": {}
+    "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj": {}
   },
   "projects": {
-    "/Users/walaa/Documents/CodeStack/Visual Studio Code/FullStack/GetShitDone/get_shit_done-webapi/get_shit_done-webapi.csproj": {
+    "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/walaa/Documents/CodeStack/Visual Studio Code/FullStack/GetShitDone/get_shit_done-webapi/get_shit_done-webapi.csproj",
+        "projectUniqueName": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj",
         "projectName": "get_shit_done-webapi",
-        "projectPath": "/Users/walaa/Documents/CodeStack/Visual Studio Code/FullStack/GetShitDone/get_shit_done-webapi/get_shit_done-webapi.csproj",
-        "packagesPath": "/Users/walaa/.nuget/packages/",
-        "outputPath": "/Users/walaa/Documents/CodeStack/Visual Studio Code/FullStack/GetShitDone/get_shit_done-webapi/obj/",
+        "projectPath": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\get_shit_done-webapi.csproj",
+        "packagesPath": "C:\\Users\\An Nguyen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\An Nguyen\\Desktop\\CodeStack\\LEVEL2\\GetShitDoneBackEnd\\Get-hitDone-4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/walaa/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\An Nguyen\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -43,6 +43,8 @@
               "version": "[6.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.3, )"
             },
@@ -79,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
