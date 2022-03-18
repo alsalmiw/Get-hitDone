@@ -316,12 +316,12 @@ namespace get_shit_done_webapi.Services.Context
                     specialistName = "Jessie"
                 },
                 new TaskModel(){
-                    Id = 3,
+                    Id = 4,
                     specialistId = 2,
-                    ProjectId = 1,
-                    TaskName ="TaskTracker BackEnd",
-                    TaskDateCreate="Build Back End for TaskTracker",
-                    TaskDescription = "Create the back end for TaskTracker",
+                    ProjectId = 4,
+                    TaskName ="BurgerShot BackEnd",
+                    TaskDateCreate="Build Back End for BurgerShot",
+                    TaskDescription = "Create the back end for BurgerShot",
                     PriorityOfTask ="Low",
                     StatusOfTask ="InProgress",
                     TaskDueDate = "03/18/2022",
