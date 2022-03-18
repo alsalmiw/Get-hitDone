@@ -34,7 +34,7 @@ namespace get_shit_done_webapi.Controllers
         [HttpPost("UpdateTaskStatus/{taskId}/{status}")]
         public bool UpdateTaskStatus(int taskId, string? status)
         {
-            return _data.UpdateTaskStatus(taskId, status)
+            return _data.UpdateTaskStatus(taskId, status);
         }
 
         

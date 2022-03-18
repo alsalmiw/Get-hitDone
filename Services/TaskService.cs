@@ -27,6 +27,19 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() != 0;
         }
 
+        public bool UpdateTaskStatus(int taskId, string? status)
+        {
+			TaskModel foundTask = GetTaskById(taskId);
+            bool result = false;
+            if(foundTask != null)
+            {
+                foundTask.StatusOfTask = status;
+                _context.Update<TaskModel>(foundTask);
+               result =  _context.SaveChanges() != 0;
+            }
+            return result;
+        }
+
         public IEnumerable<TaskModel> GetAllTasks()
         {
             return _context.TaskInfo;
@@ -37,6 +50,10 @@ namespace get_shit_done_webapi.Services
             TaskDelete.TaskIsDeleted = true;
             _context.Update<TaskModel>(TaskDelete);
             return _context.SaveChanges() !=0;
+        }
+        public TaskModel GetTaskById(int Id)
+        {
+            return _context.TaskInfo.SingleOrDefault(item => item.Id == Id);
         }
 
         public IEnumerable<TaskModel> GetTaskByStatus (string TaskStatus)

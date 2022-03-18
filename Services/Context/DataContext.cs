@@ -171,6 +171,168 @@ namespace get_shit_done_webapi.Services.Context
                 },
             };
             builder.Entity<UserModel>().HasData(defaultData);
+
+            var defaultProjectData = new List<ProjectModel>()
+            {
+                new ProjectModel(){
+                     Id =1,
+                     UserId = 1,
+                     ProjectName ="Expired?",
+                     ProjectDescription="Check if food is expired",
+                     DateCreate ="3/18/22",
+                     DueDate ="3/30/22",
+                     StatusOfProject = "InProgress",
+                     PriorityOfProject = "Low",
+                     isDeleted = false,
+                     isArchived = false
+                },
+                new ProjectModel(){
+                     Id =2,
+                     UserId = 2,
+                     ProjectName ="Expired?",
+                     ProjectDescription="Check if food is expired",
+                     DateCreate ="6/12/22",
+                     DueDate ="7/30/22",
+                     StatusOfProject = "InProgress",
+                     PriorityOfProject = "Medium",
+                     isDeleted = true,
+                     isArchived = false
+                },
+                new ProjectModel(){
+                     Id = 3,
+                     UserId = 3,
+                     ProjectName ="ChickFlicks",
+                     ProjectDescription="Pick a Movie with your Friends",
+                     DateCreate ="3/15/22",
+                     DueDate ="4/01/22",
+                     StatusOfProject = "Completed",
+                     PriorityOfProject = "High",
+                     isDeleted = false,
+                     isArchived = false
+                },
+                new ProjectModel(){
+                     Id = 4,
+                     UserId = 4,
+                     ProjectName ="BurgerShot",
+                     ProjectDescription="Sell Burger",
+                     DateCreate ="8/2/22",
+                     DueDate ="4/01/23",
+                     StatusOfProject = "Completed",
+                     PriorityOfProject = "High",
+                     isDeleted = true,
+                     isArchived = false
+                },
+                
+            };
+            builder.Entity<ProjectModel>().HasData(defaultProjectData);
+
+            var defaultSpecialistData = new List<SpecialistProjectModel>()
+            {
+                new SpecialistProjectModel(){
+                    
+                    Id = 1,
+                    UserId = 1,
+                    ProjectId = 1
+                },
+                new SpecialistProjectModel(){
+                    
+                    Id = 2,
+                    UserId = 2,
+                    ProjectId = 2
+                },
+                new SpecialistProjectModel(){
+                    
+                    Id = 3,
+                    UserId = 3,
+                    ProjectId = 3
+                },
+                new SpecialistProjectModel(){
+                    Id = 4,
+                    UserId = 1,
+                    ProjectId =  2
+                },
+                new SpecialistProjectModel(){
+                    Id = 5,
+                    UserId = 1,
+                    ProjectId =  3
+                },
+                new SpecialistProjectModel(){
+                    Id = 6,
+                    UserId = 2,
+                    ProjectId =  4
+                }
+                 new SpecialistProjectModel(){
+                    Id = 7,
+                    UserId = 3,
+                    ProjectId =  4
+                }
+                
+                
+            };
+            builder.Entity<SpecialistProjectModel>().HasData(defaultSpecialistData);
+
+            var defaultTaskData = new List<TaskModel>()
+            {
+                new TaskModel(){
+                    Id = 1,
+                    specialistId = 2,
+                    ProjectId = 1,
+                    TaskName ="ChickFlicksFrontEnd",
+                    TaskDateCreate="Build Front End for ChicksFlicks",
+                    TaskDescription = "Create the front end for app",
+                    PriorityOfTask ="High",
+                    StatusOfTask ="InProgress",
+                    TaskDueDate = "05/01/2022",
+                    TaskIsDeleted = false,
+                    TaskisArchived = false,
+                    specialistName = "An"
+                },
+                new TaskModel(){
+                    Id = 1,
+                    specialistId = 2,
+                    ProjectId = 4,
+                    TaskName ="ChickFlicksBackEnd",
+                    TaskDateCreate="Build Back End for ChicksFlicks",
+                    TaskDescription = "Create the back end for app",
+                    PriorityOfTask ="High",
+                    StatusOfTask ="Completed",
+                    TaskDueDate = "05/01/2022",
+                    TaskIsDeleted = false,
+                    TaskisArchived = false,
+                    specialistName = "Hector"
+                },
+                new TaskModel(){
+                    Id = 1,
+                    specialistId = 2,
+                    ProjectId = 1,
+                    TaskName ="ChickFlicksFrontEnd",
+                    TaskDateCreate="Build Front End for ChicksFlicks",
+                    TaskDescription = "Create the front end for app",
+                    PriorityOfTask ="Low",
+                    StatusOfTask ="InProgress",
+                    TaskDueDate = "05/01/2022",
+                    TaskIsDeleted = false,
+                    TaskisArchived = false,
+                    specialistName = "Jessie"
+                },
+                new TaskModel(){
+                    Id = 3,
+                    specialistId = 2,
+                    ProjectId = 1,
+                    TaskName ="TaskTracker BackEnd",
+                    TaskDateCreate="Build Back End for TaskTracker",
+                    TaskDescription = "Create the back end for TaskTracker",
+                    PriorityOfTask ="Low",
+                    StatusOfTask ="InProgress",
+                    TaskDueDate = "03/18/2022",
+                    TaskIsDeleted = false,
+                    TaskisArchived = false,
+                    specialistName = "Bob"
+                }
+            };
+            builder.Entity<TaskModel>().HasData(defaultTaskData);
+            
+            
         }
     }
 }
