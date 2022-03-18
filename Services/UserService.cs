@@ -32,7 +32,7 @@ namespace get_shit_done_webapi.Services
         {
             bool result = false;
             UserModel FoundUser = GetUserByID(id);
-            if(FoundUser != null)
+            if (FoundUser != null)
             {
                 FoundUser.isRevoked = !FoundUser.isRevoked;
                 _context.Update<UserModel>(FoundUser);
@@ -45,7 +45,7 @@ namespace get_shit_done_webapi.Services
         {
             bool result = false;
             UserModel FoundUser = GetUserByID(id);
-            if(FoundUser != null)
+            if (FoundUser != null)
             {
                 FoundUser.isAdmin = !FoundUser.isAdmin;
                 _context.Update<UserModel>(FoundUser);
@@ -67,11 +67,18 @@ namespace get_shit_done_webapi.Services
 
         public bool UpdateUserRole(string Username)
         {
-            UserModel foundUser = GetUserByUsername(Username);
             bool result = false;
-            if(foundUser != null)
-            {
-                foundUser.isAdmin == true ? foundUser.isAdmin = false : foundUser.isAdmin = true;
+            UserModel foundUser = GetUserByUsername(Username);
+            if(foundUser != null){
+                if(foundUser.isAdmin == true){
+                    foundUser.isAdmin = false;
+                    _context.Update<UserModel>(foundUser);
+                    result = _context.SaveChanges() != 0;
+                }else{
+                    foundUser.isAdmin = true;
+                    _context.Update<UserModel>(foundUser);
+                    result = _context.SaveChanges() != 0;
+                }
             }
             return result;
         }
@@ -80,7 +87,7 @@ namespace get_shit_done_webapi.Services
         {
             UserModel foundUser = GetUserByID(id);
             bool result = false;
-            if(foundUser != null)
+            if (foundUser != null)
             {
                 foundUser.Username = newUsername;
                 _context.Update<UserModel>(foundUser);
@@ -92,18 +99,18 @@ namespace get_shit_done_webapi.Services
         public bool UpdateUserModel(UserModel UserToUpdate)
         {
             _context.Update<UserModel>(UserToUpdate);
-            return _context.SaveChanges() !=0;
+            return _context.SaveChanges() != 0;
         }
 
         public bool DeleteUser(string Username)
         {
             UserModel foundUser = GetUserByUsername(Username);
             bool result = false;
-            if(foundUser != null)
+            if (foundUser != null)
             {
                 foundUser.Username = Username;
                 _context.Remove<UserModel>(foundUser);
-               result =  _context.SaveChanges() != 0;
+                result = _context.SaveChanges() != 0;
             }
             return result;
         }
@@ -116,21 +123,21 @@ namespace get_shit_done_webapi.Services
         {
             bool result = false;
             UserModel foundUser = GetUserByUsername(username);
-            if(foundUser.isRevoked == true)
+            if (foundUser.isRevoked == true)
             {
                 result = true;
             }
-            return result; 
+            return result;
         }
         public IActionResult Login(LoginDTO user)
         {
             IActionResult Result = Unauthorized();
-            if(DoesUserExists(user.Username))
+            if (DoesUserExists(user.Username))
             {
                 var foundUser = GetUserByUsername(user.Username);
                 var verifyPass = VerifyUserPassword(user.Password, foundUser.Hash, foundUser.Salt);
                 var isRevoked = revokedStatus(user.Username);
-                if(verifyPass)
+                if (verifyPass)
                 {
                     var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ILoveToTaskTrackerAllDay@209"));
                     var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
@@ -140,8 +147,8 @@ namespace get_shit_done_webapi.Services
                         claims: new List<Claim>(),
                         expires: DateTime.Now.AddMinutes(30),
                         signingCredentials: signinCredentials
-                    );              
-                    if(isRevoked == false)
+                    );
+                    if (isRevoked == false)
                     {
                         var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
                         Result = Ok(new { Token = tokenString });
@@ -154,7 +161,7 @@ namespace get_shit_done_webapi.Services
 
 
 
-         public PasswordDTO HashPassword(string? password)
+        public PasswordDTO HashPassword(string? password)
         {
             PasswordDTO newHashedPassword = new PasswordDTO();
             byte[] SaltBytes = new byte[64];
@@ -177,27 +184,27 @@ namespace get_shit_done_webapi.Services
         }
 
 
-         public bool AddUser(CreateAccountDTO UserToAdd)
+        public bool AddUser(CreateAccountDTO UserToAdd)
         {
             bool result = false;
             if (!DoesUserExists(UserToAdd.Username))
             {
                 UserModel newUser = new UserModel();
-				newUser.Id = 0; 
+                newUser.Id = 0;
                 newUser.Username = UserToAdd.Username;
-                
+
                 var hashedPassword = HashPassword(UserToAdd.Password);
-             
+
                 newUser.Salt = hashedPassword.Salt;
                 newUser.Hash = hashedPassword.Hash;
                 newUser.isAdmin = false;
                 newUser.isOwner = false;
                 newUser.isRevoked = false;
                 newUser.isDeleted = false;
-							
+
                 _context.Add(newUser);
 
-                result = _context.SaveChanges() != 0;   
+                result = _context.SaveChanges() != 0;
             }
             return result;
         }
@@ -205,7 +212,7 @@ namespace get_shit_done_webapi.Services
         {
             bool result = false;
             UserModel FoundUser = GetUserByID(id);
-            if(FoundUser != null)
+            if (FoundUser != null)
             {
                 FoundUser.isOwner = !FoundUser.isOwner;
                 _context.Update<UserModel>(FoundUser);

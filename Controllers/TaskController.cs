@@ -31,11 +31,17 @@ namespace get_shit_done_webapi.Controllers
             return _data.UpdateTask(TaskUpdate);
         }
 
-        //
+        
         [HttpGet("GetAllTasksWithProjectId/{Id}")]
         public IEnumerable<TaskModel> GetAllTasks(int Id)
         {
             return _data.GetAllTasks();
+        }
+
+        [HttpGet("GetEverySingleTask")]
+        public IEnumerable<TaskModel> GetEverySingleTask()
+        {
+            return _data.GetEverySingleTask();
         }
 
         [HttpPost("DeleteTask")]
