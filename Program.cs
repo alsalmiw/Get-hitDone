@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("GetShitDonePolicy",
     builder =>
     {
-        builder.WithOrigins("http://expiredbackend.database.windows.net/")
+        builder.WithOrigins("http://localhost:3000","https://getshitsdone.azurewebsites.net/")
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
