@@ -73,6 +73,7 @@ namespace get_shit_done_webapi.Services
             {
                 foundUser.isAdmin == true ? foundUser.isAdmin = false : foundUser.isAdmin = true;
             }
+            return result;
         }
 
         public bool UpdateUser(int id, string newUsername)

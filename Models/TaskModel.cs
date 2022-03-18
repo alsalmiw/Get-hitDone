@@ -17,6 +17,8 @@ namespace get_shit_done_webapi.Models
         public string? TaskDueDate { get; set; }
         public bool? TaskIsDeleted { get; set; }
         public bool? TaskisArchived { get; set; }
+        public string? specialistName { get; set; }
+        public int specialistId { get; set; }
         public TaskModel(){}
     } 
 }
