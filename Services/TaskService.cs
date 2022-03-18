@@ -47,6 +47,10 @@ namespace get_shit_done_webapi.Services
         {
             return _context.TaskInfo.Where(item => item.ProjectId == Id);
         }
+        public IEnumerable<TaskModel> GetEverySingleTask()
+        {
+            return _context.TaskInfo;
+        }
     
     }
 }
