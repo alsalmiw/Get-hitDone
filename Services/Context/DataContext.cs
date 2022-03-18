@@ -260,7 +260,7 @@ namespace get_shit_done_webapi.Services.Context
                     Id = 6,
                     UserId = 2,
                     ProjectId =  4
-                }
+                },
                  new SpecialistProjectModel(){
                     Id = 7,
                     UserId = 3,
@@ -305,8 +305,8 @@ namespace get_shit_done_webapi.Services.Context
                     Id = 3,
                     specialistId = 3,
                     ProjectId = 1,
-                    TaskName ="ChickFlicksFrontEnd",
-                    TaskDateCreate="Build Front End for ChicksFlicks",
+                    TaskName ="Expired? Front End",
+                    TaskDateCreate="Build Front End for Expired?",
                     TaskDescription = "Create the front end for app",
                     PriorityOfTask ="Low",
                     StatusOfTask ="InProgress",
