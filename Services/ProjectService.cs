@@ -27,6 +27,20 @@ namespace get_shit_done_webapi.Services
             return _context.SaveChanges() !=0;
 
         }
+
+        public bool UpdateProjectStatus(int projectId, string? status)
+        {
+			ProjectModel foundProject = GetProjectById(projectId);
+            bool result = false;
+            if(foundProject != null)
+            {
+                foundProject.StatusOfProject = status;
+                _context.Update<ProjectModel>(foundProject);
+               result =  _context.SaveChanges() != 0;
+            }
+            return result;
+        }
+        
         public bool ArchiveProject(ProjectModel ProjectArchive)
         {
             ProjectArchive.isArchived = true;

@@ -30,6 +30,12 @@ namespace get_shit_done_webapi.Controllers
             return _data.UpdateProject(ProjectUpdate);
         }
 
+        [HttpPost("UpdateProjectStatus/{projectId}/{status}")]
+        public bool UpdateProjectStatus(int projectId, string? status)
+        {
+            return _data.UpdateProjectStatus(projectId, status);
+        }
+
         [HttpPost("ArchiveProject")]
         public bool ArchiveProject(ProjectModel ProjectArchive)
         {
