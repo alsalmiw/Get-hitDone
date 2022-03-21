@@ -21,7 +21,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy("GetShitDonePolicy",
     builder =>
     {
+<<<<<<< HEAD
         builder.WithOrigins("http://localhost:3000","https://getshitsdone.azurewebsites.net")
+=======
+        builder.WithOrigins("http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "https://getshitsdone.azurewebsites.net/")
+>>>>>>> 38c5ef87c0de0b6835ca8dbe5783cc1dd3f2319d
         .AllowAnyHeader()
         .AllowAnyMethod();
     });
