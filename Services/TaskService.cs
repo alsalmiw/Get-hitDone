@@ -45,11 +45,17 @@ namespace get_shit_done_webapi.Services
             return _context.TaskInfo;
         }
 
-        public bool DeleteTask(TaskModel TaskDelete)
+        public bool DeleteTask(int taskId)
         {
-            TaskDelete.TaskIsDeleted = true;
-            _context.Update<TaskModel>(TaskDelete);
-            return _context.SaveChanges() !=0;
+            TaskModel foundTask = GetTaskById(taskId);
+            bool result = false;
+            if(foundTask != null)
+            {
+                foundTask.Id = taskId;
+                _context.Remove<TaskModel>(foundTask);
+                result = _context.SaveChanges() !=0;
+            }
+            return result;
         }
         public TaskModel GetTaskById(int Id)
         {

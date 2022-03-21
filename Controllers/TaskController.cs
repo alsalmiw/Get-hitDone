@@ -50,10 +50,10 @@ namespace get_shit_done_webapi.Controllers
             return _data.GetEverySingleTask();
         }
 
-        [HttpPost("DeleteTask")]
-        public bool DeleteTask(TaskModel TaskDelete)
+        [HttpPost("DeleteTask/{taskId}")]
+        public bool DeleteTask(int taskId)
         {
-            return _data.DeleteTask(TaskDelete);
+            return _data.DeleteTask(taskId);
         }
 
 
