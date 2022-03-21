@@ -38,10 +38,10 @@ namespace get_shit_done_webapi.Controllers
         }
 
         
-        [HttpGet("GetAllTasksWithProjectId/{Id}")]
-        public IEnumerable<TaskModel> GetAllTasks(int Id)
+        [HttpGet("GetTaskByProjectId/{Id}")]
+        public IEnumerable<TaskModel> GetTaskByProjectId(int Id)
         {
-            return _data.GetAllTasks();
+            return _data.GetTaskByProjectId(Id);
         }
 
         [HttpGet("GetEverySingleTask")]

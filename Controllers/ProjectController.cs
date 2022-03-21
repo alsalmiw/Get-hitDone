@@ -36,19 +36,13 @@ namespace get_shit_done_webapi.Controllers
             return _data.UpdateProjectStatus(projectId, status);
         }
 
-        [HttpPost("ArchiveProject")]
-        public bool ArchiveProject(ProjectModel ProjectArchive)
+        [HttpPost("ArchiveProject/{projectId}")]
+        public bool ArchiveProject(int projectId)
         {
-            return _data.ArchiveProject(ProjectArchive);
+            return _data.ArchiveProject(projectId);
         }
 
-        [HttpPost("DeleteProject")]
-        public bool DeleteProject(ProjectModel ProjectDelete)
-        {
-            return _data.DeleteProject(ProjectDelete);
-        }
-    
-        
+       
         [HttpGet("GetAllProjects")]
         public IEnumerable<ProjectModel> GetAllProjects()
         {

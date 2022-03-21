@@ -41,19 +41,19 @@ namespace get_shit_done_webapi.Services
             return result;
         }
         
-        public bool ArchiveProject(ProjectModel ProjectArchive)
+        public bool ArchiveProject(int projectId)
         {
-            ProjectArchive.isArchived = true;
-            _context.Update<ProjectModel>(ProjectArchive);
-            return _context.SaveChanges() !=0;
+            ProjectModel foundProject = GetProjectById(projectId);
+            bool result = false;
+            if(foundProject != null)
+            {
+                foundProject.isArchived = true;
+                _context.Update<ProjectModel>(foundProject);
+                result =  _context.SaveChanges() !=0;
+            }
+            return result;
         }
 
-        public bool DeleteProject(ProjectModel ProjectDelete)
-        {
-            ProjectDelete.isDeleted = true;
-            _context.Update<ProjectModel>(ProjectDelete);
-            return _context.SaveChanges() !=0;
-        }
         
         public IEnumerable<ProjectModel> GetAllProjects()
         {
